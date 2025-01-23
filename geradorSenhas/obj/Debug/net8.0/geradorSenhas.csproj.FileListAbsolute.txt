@@ -1,0 +1,15 @@
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\bin\Debug\net8.0\geradorSenhas.exe
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\bin\Debug\net8.0\geradorSenhas.deps.json
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\bin\Debug\net8.0\geradorSenhas.runtimeconfig.json
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\bin\Debug\net8.0\geradorSenhas.dll
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\bin\Debug\net8.0\geradorSenhas.pdb
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.AssemblyInfoInputs.cache
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.AssemblyInfo.cs
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.csproj.CoreCompileInputs.cache
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.sourcelink.json
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.dll
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\refint\geradorSenhas.dll
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.pdb
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\geradorSenhas.genruntimeconfig.cache
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradorSenhas\obj\Debug\net8.0\ref\geradorSenhas.dll
