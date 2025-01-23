@@ -1,146 +1,131 @@
 ﻿
 using System;
+using System.IO;
+using System.Text;
 
-class GeradorDeSenha
+class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-    
-        Console.Write("Quantos caracteres deseja para a senha? ");
-        int tamanho = int.Parse(Console.ReadLine());
-
-        
-        Console.Write("Incluir letras (sim/não)? ");
-        bool incluirLetras = Console.ReadLine().Trim().ToLower() == "sim";
-
-        Console.Write("Incluir números (sim/não)? ");
-        bool incluirNumeros = Console.ReadLine().Trim().ToLower() == "sim";
-
-        Console.Write("Incluir símbolos (sim/não)? ");
-        bool incluirSimbolos = Console.ReadLine().Trim().ToLower() == "sim";
-
-       
-        string senha = GerarSenha(tamanho, incluirLetras, incluirNumeros, incluirSimbolos);
-
-       
-        Console.WriteLine($"Sua senha gerada é: {senha}");
-    }
-
-    static string GerarSenha(int tamanho, bool incluirLetras, bool incluirNumeros, bool incluirSimbolos)
-    {
-        
-        string letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        string letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
-        string numeros = "0123456789";
-        string simbolos = "!@#$%^&*()-_=+[]{}|;:,.<>?/";
-        
-        string caracteresPermitidos = "";
-
-     
-        if (incluirLetras)
-            caracteresPermitidos += letrasMaiusculas + letrasMinusculas;
-        if (incluirNumeros)
-            caracteresPermitidos += numeros;
-        if (incluirSimbolos)
-            caracteresPermitidos += simbolos;
-
-       
-        if (string.IsNullOrEmpty(caracteresPermitidos))
-        {
-            throw new Exception("É necessário incluir pelo menos um tipo de caractere.");
-        }
-
-        Random random = new Random();
-        char[] senhaArray = new char[tamanho];
-
-      
-        for (int i = 0; i < tamanho; i++)
-        {
-            senhaArray[i] = caracteresPermitidos[random.Next(caracteresPermitidos.Length)];
-        }
-
-        return new string(senhaArray);
-    }
-}
-
-{
-  public static void RecuperarSenhas()
-    {
-        string caminhoBackup = "bkp.txt";
-        if (File.Exists(caminhoBackup))
-        {
-            try
-            {
-                string[] senhas = File.ReadAllLines(caminhoBackup); 
-                Console.WriteLine("Senhas recuperadas do backup:");
-                foreach (var senha in senhas)
-                {
-                    Console.WriteLine(senha); 
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao ler o arquivo de backup: {ex.Message}");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Não há senhas salvas no backup.");
-        }
-    }
-
-    static void Main()
-    {
-        Console.WriteLine("Gerador de Senhas Seguras");
+        string filePath = "bkp.TXT";
 
         while (true)
         {
-            Console.WriteLine("\nEscolha uma opção:");
-            Console.WriteLine("1 - Gerar nova senha");
-            Console.WriteLine("2 - Recuperar senhas do backup");
-            Console.WriteLine("3 - Sair");
-            Console.Write("Digite a opção: ");
-            int opcao = int.Parse(Console.ReadLine());
+            Console.WriteLine("=== Gerador de Senhas ===");
+            Console.WriteLine("1. Gerar nova senha");
+            Console.WriteLine("2. Recuperar senhas geradas");
+            Console.WriteLine("3. Sair");
+            Console.Write("Escolha uma opção: ");
+            string escolha = Console.ReadLine();
 
-            if (opcao == 1)
+            switch (escolha)
             {
-               
-                Console.Write("Informe o tamanho da senha: ");
-                int tamanho = int.Parse(Console.ReadLine());
+                case "1":
+                    GerarSenha(filePath);
+                    break;
+                case "2":
+                    RecuperarSenhas(filePath);
+                    break;
+                case "3":
+                    Console.WriteLine("Saindo...");
+                    return;
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
 
-                Console.Write("Incluir letras (s/n): ");
-                bool incluirLetras = Console.ReadLine().ToLower() == "s";
+    static void GerarSenha(string filePath)
+    {
+        Console.Write("Informe o tamanho da senha desejada: ");
+        if (!int.TryParse(Console.ReadLine(), out int tamanho) || tamanho <= 0)
+        {
+            Console.WriteLine("Tamanho inválido. Tente novamente.");
+            return;
+        }
 
-                Console.Write("Incluir números (s/n): ");
-                bool incluirNumeros = Console.ReadLine().ToLower() == "s";
+        Console.Write("Incluir números? (s/n): ");
+        bool incluirNumeros = Console.ReadLine()?.Trim().ToLower() == "s";
 
-                Console.Write("Incluir símbolos (s/n): ");
-                bool incluirSimbolos = Console.ReadLine().ToLower() == "s";
+        Console.Write("Incluir letras? (s/n): ");
+        bool incluirLetras = Console.ReadLine()?.Trim().ToLower() == "s";
 
-                string senha = GerarSenha(tamanho, incluirLetras, incluirNumeros, incluirSimbolos);
-                Console.WriteLine($"Senha gerada: {senha}");
+        Console.Write("Incluir caracteres especiais (@, !, #, -)? (s/n): ");
+        bool incluirEspeciais = Console.ReadLine()?.Trim().ToLower() == "s";
 
-                Console.Write("Deseja salvar essa senha no backup? (s/n): ");
-                if (Console.ReadLine().ToLower() == "s")
+        string senha = GerarSenhaAleatoria(tamanho, incluirNumeros, incluirLetras, incluirEspeciais);
+
+        if (string.IsNullOrEmpty(senha))
+        {
+            Console.WriteLine("Não foi possível gerar a senha com as opções fornecidas.");
+            return;
+        }
+
+        Console.WriteLine($"Senha gerada: {senha}");
+
+        SalvarSenha(filePath, senha);
+    }
+
+    static string GerarSenhaAleatoria(int tamanho, bool incluirNumeros, bool incluirLetras, bool incluirEspeciais)
+    {
+        StringBuilder caracteres = new StringBuilder();
+
+        if (incluirNumeros) caracteres.Append("0123456789");
+        if (incluirLetras) caracteres.Append("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        if (incluirEspeciais) caracteres.Append("@!#-");
+
+        if (caracteres.Length == 0) return null;
+
+        Random random = new Random();
+        StringBuilder senha = new StringBuilder();
+
+        for (int i = 0; i < tamanho; i++)
+        {
+            int indice = random.Next(caracteres.Length);
+            senha.Append(caracteres[indice]);
+        }
+
+        return senha.ToString();
+    }
+
+    static void SalvarSenha(string filePath, string senha)
+    {
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine(senha);
+            }
+            Console.WriteLine("Senha salva com sucesso em bkp.TXT.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao salvar a senha: {ex.Message}");
+        }
+    }
+
+    static void RecuperarSenhas(string filePath)
+    {
+        try
+        {
+            if (File.Exists(filePath))
+            {
+                string[] senhas = File.ReadAllLines(filePath);
+                Console.WriteLine("=== Senhas Geradas ===");
+                foreach (string senha in senhas)
                 {
-                     salvarembackup(senha);
+                    Console.WriteLine(senha);
                 }
-            }
-            else if (opcao == 2)
-            {
-                
-                RecuperarSenhas();
-            }
-            else if (opcao == 3)
-            {
-                
-                Console.WriteLine("Saindo...");
-                break;
             }
             else
             {
-                Console.WriteLine("Opção inválida. Tente novamente.");
+                Console.WriteLine("Nenhuma senha encontrada.");
             }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao recuperar senhas: {ex.Message}");
         }
     }
 }
