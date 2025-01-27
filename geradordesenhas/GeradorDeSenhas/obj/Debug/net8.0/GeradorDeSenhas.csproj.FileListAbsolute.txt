@@ -1,0 +1,15 @@
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.AssemblyInfoInputs.cache
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.AssemblyInfo.cs
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.csproj.CoreCompileInputs.cache
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.sourcelink.json
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\bin\Debug\net8.0\GeradorDeSenhas.exe
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\bin\Debug\net8.0\GeradorDeSenhas.deps.json
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\bin\Debug\net8.0\GeradorDeSenhas.runtimeconfig.json
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\bin\Debug\net8.0\GeradorDeSenhas.dll
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\bin\Debug\net8.0\GeradorDeSenhas.pdb
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.dll
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\refint\GeradorDeSenhas.dll
+c:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.pdb
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\GeradorDeSenhas.genruntimeconfig.cache
+C:\Users\Alunos\OneDrive\Documentos\Mily2025\Revisao2024\geradordesenhas\GeradorDeSenhas\obj\Debug\net8.0\ref\GeradorDeSenhas.dll
