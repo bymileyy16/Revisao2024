@@ -1,3 +1,4 @@
+
 html{
     background-color: #473a2f;
 }
@@ -9,13 +10,13 @@ footer{
 }
 .subtitulo{
     color: rgb(6, 8, 8);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }   
 main{
     background-color: #a37a5a;
 }
 .bg-section{
-    background-color: #af642b;
+    background-color: #a37a5a;
 }
 .p-bg{
 color:antiquewhite;
@@ -23,7 +24,12 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
 font-size: 35pt;
 }
 
-/* Excluir depois, pois, isso se trata do fundo da segunda coluna. Apenas, para visualizar o limite da coluna. */
-.segunda-col {
-    background-color: aqua;
+.footer-bg{
+    background-color: #c6aa74;
+}
+.p2-bg{
+    background-color: #c6aa74;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35pt
 }
